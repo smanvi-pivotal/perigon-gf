@@ -1,0 +1,4 @@
+#stream create --name twittersearchjava --definition "twittersearch --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='java' | file" --deploy
+#stream create --name perigonTwitter --definition "twittersearch --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='Pivotal Software' | gemfire-json-server --host=localhost --port=10334 --useLocator=true --regionName=springxd-twitter --keyExpression=payload.getField('id_str')" --deploy
+
+stream create --name twitter-pivotal --definition "twittersearch --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='Pivotal Software' | gemfire-json-server --host=localhost --port=10334 --useLocator=true --regionName=twitterRegion --keyExpression=payload.getField('id_str')" --deploy

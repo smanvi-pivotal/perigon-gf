@@ -1,0 +1,3 @@
+start locator --name=locator1
+start server --name=gemfire-server1 --properties-file=../resources/gemfire-server.properties --server-port=0
+start server --name=gemfire-server2 --properties-file=../resources/gemfire-server.properties --server-port=0
