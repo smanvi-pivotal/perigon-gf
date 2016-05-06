@@ -1,14 +1,39 @@
-#Gemfire query
-select created_at, retweet_count, text, id, user.name, user.location from /twitterRegion
-
-
-
 Sample API Calls:
+========================================================================================================================
 
+Twitter:
+gfsh>query --query="select created_at, retweet_count, text, id, user.name, user.location from /twitterRegion"
+
+API Request: http://localhost:8080/gemfire-api/v1/queries/adhoc?q=select%20created_at%2C%20retweet_count%2C%20text%2C%20id%2C%20user.name%2C%20user.location%20from%20%2FtwitterRegion
+RESPONSE: is a list of jsons
+[
+  {
+    "created_at": "Fri May 06 15:49:50 +0000 2016",
+    "retweet_count": 4,
+    "text": "RT @cloud_comp_news: .@Ford invests $182.2 million in cloud-based software company @Pivotal https://t.co/lpliOOnyrv https://t.co/2rEILvOnEE",
+    "id": 728612745545912300,
+    "name": "Transpontification",
+    "location": ""
+  },
+   {
+      "created_at": "Fri May 06 15:45:32 +0000 2016",
+      "retweet_count": 0,
+      "text": "Ford, looking to speed tech rollout, pours $182.2M into software company Pivotal - https://t.co/5VOSykjk6F",
+      "id": 728611665202298900,
+      "name": "Webkit24",
+      "location": "Lucknow, India"
+    },
+    ........
+ ]
+
+
+========================================================================================================================
 Facebook:
-select data from /facebookRegion
-GET http://localhost:8080/gemfire-api/v1/queries/adhoc?q=select%20data%20from%20%2FfacebookRegion
-RESPONSE:
+gfsh>query --query="select data from /facebookRegion"
+
+API REQUEST :GET http://localhost:8080/gemfire-api/v1/queries/adhoc?q=select%20data%20from%20%2FfacebookRegion
+RESPONSE: is a little different than other sources. Due to most likely a bug(https://jira.spring.io/browse/XD-3212) in springxd I cannot load the jsons as seperate key value pairs.
+The entire dataset is stored in a single value.
 [
   [
     {
@@ -35,81 +60,36 @@ RESPONSE:
       },
       "start_time": "2014-06-09T08:00:00-0700",
       "id": "231143197077539"
-    },
-    {
-      "description": "Apache™ Hadoop® innovations continue to power and disrupt the data management and warehousing markets. However, leveraging Apache Hadoop for today's advanced analytics requires a steep learning curve and even more challenging mesh of additional technologies. Pivotal has been busy advancing and opening its unique enterprise Pivotal HD, HAWQ SQL query engine, and in-memory capabilities specifically to fit growing demands for advanced analytics and machine learning algorithms.\n\nIn this webinar, Pivotal will introduce its most recent advances in Pivotal's innovative Analytic Data Lake. We will cover recent enhancements providing more powerful and high performing analytics, leveraging in-memory technologies for real-time processing and analysis, and unlocking Pivotal's capabilities for a wide variety of analytic languages, formats, and interfaces.\n\nJoin us to learn about unlocking Apache Hadoop for next generation analytic intelligence.\n\nRegistration:\nhttp://bit.ly/1fbGTr1 for 9:00 am PST\n\nWe are hosting another session on Thursday, March 27/Friday, March 28, 2014 at 6:00PM (PST)/9:00 AM Singapore Time (GMT+08:00). Register here http://bit.ly/1cyJeBQ",
-      "name": "Webinar: Introduction To Pivotal's Next Generation Analytic Data Lake",
-      "place": {
-        "name": "Pivotal",
-        "location": {
-          "city": "San Francisco",
-          "country": "United States",
-          "latitude": 37.781997,
-          "longitude": -122.404051,
-          "state": "CA",
-          "street": "875 Howard St",
-          "zip": "94103"
-        },
-        "id": "161112704050757"
-      },
-      "start_time": "2014-03-27T09:00:00-0700",
-      "id": "1374377229504439"
-    },
-    {
-      "description": "Join Pivotal in Santa Clara next month for Strata 2014. When registering enter promo code \"Pivotal20\" to receive a 20% discount.",
-      "name": "Strata 2014: Making Data Work",
-      "place": {
-        "name": "Santa Clara, CA",
-        "location": {
-          "city": "Santa Clara",
-          "country": "United States",
-          "latitude": 37.3544,
-          "longitude": -121.969,
-          "state": "CA"
-        },
-        "id": "105464892820215"
-      },
-      "start_time": "2014-02-11T00:00:00-0800",
-      "id": "1413936472181851"
-    },
-    {
-      "description": "Storage Solutions for Big Data\n\nThere is a plethora of storage solutions for big data, each having its own pros and cons. The objective of this talk is to delve deeper into specific classes of storage types like Distributed File Systems, in-memory Key Value Stores, Big Table Stores and provide insights on how to choose the right storage solution for a specific class of problems. For instance, running large analytic workloads, iterative machine learning algorithms, and real time analytics.\n\nThe talk will cover HDFS, HBase, Redis and introduce Software Defined Storage.\n\nSchedule: \n5:30-6:30 pm Pizza and networking \n6:30-8:00pm Talk and Q&A \n8:00-8:30 pm Wind down\n\nAbout the speaker:  Sameer Tiwari\n\nSameer has been building platform products for large deployments since the Application Server days at Sun Microsystems. He started working on big data prior to the invention of Hadoop, in the field of email archiving/search. Recently he was working on Ad-Serving and User Platform systems at Yahoo. He is the Hadoop Architect at Pivotal, Inc. building the next generation systems for Big Data Analytics. - See more at: http://blog.gopivotal.com/author/sameertiwari#sthash.D6NH4fMa.dpuf",
-      "end_time": "2014-02-06T20:30:00-0800",
-      "name": "Storage Solutions for Big Data with Hadoop Architect, Sameer Tiwari",
-      "place": {
-        "name": "Pivotal",
-        "location": {
-          "city": "San Francisco",
-          "country": "United States",
-          "latitude": 37.781997,
-          "longitude": -122.404051,
-          "state": "CA",
-          "street": "875 Howard St",
-          "zip": "94103"
-        },
-        "id": "161112704050757"
-      },
-      "start_time": "2014-02-06T17:30:00-0800",
-      "id": "1402265536694038"
-    },
-    {
-      "description": "The Business Data Lake – an Evolution in Data Infrastructure\n\nGuest Speaker: Steve Jones, Strategy Director – Big Data & Analytics, CapGemini \n\nRSVP: http://bit.ly/1equKPW\n\nData is growing 60% YoY and there are new data types associated with that growth. The already expensive Enterprise Data Warehouse (EDW) process is being overburden for extracting, transforming and loading all data. IT departments are looking to maintain or lower costs as data grows by archiving and offloading data processing (which accounts for 60% to 70%) from the expensive enterprise data warehouse.\n\nBig Data technologies, such as Hadoop have already significantly altered the cost dynamics to store all, new and multiple data types like semi-structured and unstructured data. More than 75% of Hadoop uses cases center around data transformation and for archival purposes.  \n\nJoin us to learn how CapGemini and Pivotal are focused on how to take Hadoop to the next level of business transformation through IT transformation. The Business Data Lake promises to increase the amount of data being captured and stored through Hadoop, and more importantly increase the amount of data being analyzed and operationalized within in the business – turning insight into action.",
-      "name": "What You Can Do With Hadoop Webinar",
-      "place": {
-        "name": "Pivotal",
-        "location": {
-          "city": "San Francisco",
-          "country": "United States",
-          "latitude": 37.781997,
-          "longitude": -122.404051,
-          "state": "CA",
-          "street": "875 Howard St",
-          "zip": "94103"
-        },
-        "id": "161112704050757"
-      },
-      "start_time": "2014-01-23T09:00:00-0800",
-      "id": "177979675746505"
-    }
+    }................
+    ................
+
+
   ]
 ]
+
+========================================================================================================================
+GoogleNews
+To Run from gfsh :
+gfsh>query --query="select link, title, description.value, publishedDate from /googleNewsRegion"
+
+API REQUEST:
+http://localhost:8080/gemfire-api/v1/queries/adhoc?q=select%20link%2C%20title%2C%20description.value%2C%20publishedDate%20from%20%2FgoogleNewsRegion
+
+API RESPONSE: is a list of JSONs
+[
+  {
+    "link": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHuJ6g6lKTv9w2ZIvdnCKwqrf-lNw&clid=c3a7d30bb8a4878e06b80cf16b898331&ei=nrgsV7iIBdfN3gHa9IzwBg&url=http://www.yenisafak.com/en/economy/ford-invests-1822-mln-in-software-company-pivotal-2461945",
+    "title": "Ford invests $182.2 mln in software company Pivotal - Yeni Şafak English (press release)",
+    "value": "<table border=\"0\" cellpadding=\"2\" cellspacing=\"7\" style=\"vertical-align:top;\"><tr><td width=\"80\" align=\"center\" valign=\"top\"><font style=\"font-size:85%;font-family:arial,sans-serif\"><a href=\"http://news.google.com/news/url?sa=t&amp;fd=R&amp;ct2=us&amp;usg=AFQjCNHuJ6g6lKTv9w2ZIvdnCKwqrf-lNw&amp;clid=c3a7d30bb8a4878e06b80cf16b898331&amp;ei=nrgsV7iIBdfN3gHa9IzwBg&amp;url=http://www.yenisafak.com/en/economy/ford-invests-1822-mln-in-software-company-pivotal-2461945\"><img src=\"//t0.gstatic.com/images?q=tbn:ANd9GcTLiTemrkCOHBVufGZAi4CsE0dgJRgxM33arLoPsxwC87k0IV3eX4bSnld0uQ7LsC_B3xk367wy\" alt=\"\" border=\"1\" width=\"80\" height=\"80\"><br><font size=\"-2\">Yeni Şafak English (press release)</font></a></font></td><td valign=\"top\" class=\"j\"><font style=\"font-size:85%;font-family:arial,sans-serif\"><br><div style=\"padding-top:0.8em;\"><img alt=\"\" height=\"1\" width=\"1\"></div><div class=\"lh\"><a href=\"http://news.google.com/news/url?sa=t&amp;fd=R&amp;ct2=us&amp;usg=AFQjCNHuJ6g6lKTv9w2ZIvdnCKwqrf-lNw&amp;clid=c3a7d30bb8a4878e06b80cf16b898331&amp;ei=nrgsV7iIBdfN3gHa9IzwBg&amp;url=http://www.yenisafak.com/en/economy/ford-invests-1822-mln-in-software-company-pivotal-2461945\"><b>Ford invests $182.2 mln in <b>software</b> company <b>Pivotal</b></b></a><br><font size=\"-1\"><b><font color=\"#6f6f6f\">Yeni Şafak English (press release)</font></b></font><br><font size=\"-1\">The investment in <b>Pivotal</b>, a cloud-<b>software</b> company which provides tools that make it easier for developers to build <b>software</b>, will help Ford boost its own <b>software</b> capabilities. As part of the deal, Ford and <b>Pivotal</b> will jointly open labs in the <b>...</b></font><br><font size=\"-1\" class=\"p\"></font><br><font class=\"p\" size=\"-1\"><a class=\"p\" href=\"http://news.google.com/news/more?ncl=dmjZpPUD1mUcqOM&amp;authuser=0&amp;ned=us\"><nobr><b></b></nobr></a></font></div></font></td></tr></table>",
+    "publishedDate": 1462455700000
+  },
+  {
+    "link": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNExcrIt1DT_3HrZXcfg-W6bov4Xew&clid=c3a7d30bb8a4878e06b80cf16b898331&ei=nrgsV7iIBdfN3gHa9IzwBg&url=http://fortune.com/2016/05/05/pivotal-ford-microsoft-funding/?xid%3Dgn_editorspicks",
+    "title": "Pivotal Scores $253 Million in More Funding - Fortune",
+    "value": "<table border=\"0\" cellpadding=\"2\" cellspacing=\"7\" style=\"vertical-align:top;\"><tr><td width=\"80\" align=\"center\" valign=\"top\"><font style=\"font-size:85%;font-family:arial,sans-serif\"></font></td><td valign=\"top\" class=\"j\"><font style=\"font-size:85%;font-family:arial,sans-serif\"><br><div style=\"padding-top:0.8em;\"><img alt=\"\" height=\"1\" width=\"1\"></div><div class=\"lh\"><a href=\"http://news.google.com/news/url?sa=t&amp;fd=R&amp;ct2=us&amp;usg=AFQjCNExcrIt1DT_3HrZXcfg-W6bov4Xew&amp;clid=c3a7d30bb8a4878e06b80cf16b898331&amp;ei=nrgsV7iIBdfN3gHa9IzwBg&amp;url=http://fortune.com/2016/05/05/pivotal-ford-microsoft-funding/?xid%3Dgn_editorspicks\"><b><b>Pivotal</b> Scores $253 Million in More Funding</b></a><br><font size=\"-1\"><b><font color=\"#6f6f6f\">Fortune</font></b></font><br><font size=\"-1\">Getting Ford aboard, which already used <b>Pivotal&#39;s</b> Cloud Foundry <b>software</b> and <b>Pivotal</b> Labs <b>software</b> development expertise, exemplifies <b>Pivotal&#39;s</b> stance that all companies, even century-old industrial giants, need to immerse themselves in modern <b>software</b>&nbsp;...</font><br><font size=\"-1\" class=\"p\"></font><br><font class=\"p\" size=\"-1\"><a class=\"p\" href=\"http://news.google.com/news/more?ncl=dh7Rw48dzQ5xzOM&amp;authuser=0&amp;ned=us\"><nobr><b></b></nobr></a></font></div></font></td></tr></table>",
+    "publishedDate": 1462447911000
+  }.
+    .
+    .
+  ]
+
