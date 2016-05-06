@@ -12,10 +12,10 @@ With this data should have started flowing into Gemfire. Now you should be able 
 curl just spit out the available regions curl -i http://localhost:8080/gemfire-api/v1
 
 
-Endpoints:
+###Endpoints:
 
-Regions endpoints -  http://gemfire.docs.pivotal.io/docs-gemfire/latest/rest_apps/rest_regions.html
-Query endpoints   -  http://gemfire.docs.pivotal.io/docs-gemfire/latest/rest_apps/rest_queries.html
+Regions endpoints http://gemfire.docs.pivotal.io/docs-gemfire/latest/rest_apps/rest_regions.html
+Query endpoints  http://gemfire.docs.pivotal.io/docs-gemfire/latest/rest_apps/rest_queries.html
 
 
 
