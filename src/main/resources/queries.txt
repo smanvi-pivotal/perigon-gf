@@ -1,2 +1,115 @@
 #Gemfire query
 select created_at, retweet_count, text, id, user.name, user.location from /twitterRegion
+
+
+
+Sample API Calls:
+
+Facebook:
+select data from /facebookRegion
+GET http://localhost:8080/gemfire-api/v1/queries/adhoc?q=select%20data%20from%20%2FfacebookRegion
+RESPONSE:
+[
+  [
+    {
+      "description": "Join Pivotal technologists and learn how to build and deploy great software on a modern cloud platform.\n\nAt this workshop, you’ll get hands-on experience as you test drive Pivotal’s CF platform. In just a few hours, you’ll realize the speed and ease of pushing an application on Pivotal CF, the world's leading enterprise PaaS, powered by Cloud Foundry.\n\nThe day is set up to fit your needs and time availability. Come for the first half and learn how Pivotal CF can help you build transformative software. Stay for the second half and learn about the power of Continuous Delivery and Microservices.",
+      "name": "Pivotal Cloud Platform Roadshow",
+      "start_time": "2014-12-04T09:00:00-0800",
+      "id": "859296117414123"
+    },
+    {
+      "description": "The premier event for developers and cloud operators using the industry's leading Open Source Platform-as-a-Service: Cloud Foundry. Join core contributors to the project and real world users for three days to discuss deep technical topics, engineering roadmap, community ecosystem and operational best practices.\n\nAt the last Cloud Foundry Summit , we had over 500 attendees and saw sessions from Warner Music, IBM, Swisscom, Rakuten, VMware, and many others.\n\nThe Cloud Foundry Summit event is designed for community interaction and discussion. With community-led case study sessions and a dedicated un-conference to organize attendee-voted session topics, this conference is all about you, the Cloud Foundry developer or operator. Join with other dedicated community members to share information, exchange ideas and influence the future direction of Open Source Platform-as-a-Service.\n\nCall for Submissions -->http://cfsummit.com/",
+      "name": "Cloud Foundry Summit 2014 #CFSummit",
+      "place": {
+        "name": "Pivotal",
+        "location": {
+          "city": "San Francisco",
+          "country": "United States",
+          "latitude": 37.781997,
+          "longitude": -122.404051,
+          "state": "CA",
+          "street": "875 Howard St",
+          "zip": "94103"
+        },
+        "id": "161112704050757"
+      },
+      "start_time": "2014-06-09T08:00:00-0700",
+      "id": "231143197077539"
+    },
+    {
+      "description": "Apache™ Hadoop® innovations continue to power and disrupt the data management and warehousing markets. However, leveraging Apache Hadoop for today's advanced analytics requires a steep learning curve and even more challenging mesh of additional technologies. Pivotal has been busy advancing and opening its unique enterprise Pivotal HD, HAWQ SQL query engine, and in-memory capabilities specifically to fit growing demands for advanced analytics and machine learning algorithms.\n\nIn this webinar, Pivotal will introduce its most recent advances in Pivotal's innovative Analytic Data Lake. We will cover recent enhancements providing more powerful and high performing analytics, leveraging in-memory technologies for real-time processing and analysis, and unlocking Pivotal's capabilities for a wide variety of analytic languages, formats, and interfaces.\n\nJoin us to learn about unlocking Apache Hadoop for next generation analytic intelligence.\n\nRegistration:\nhttp://bit.ly/1fbGTr1 for 9:00 am PST\n\nWe are hosting another session on Thursday, March 27/Friday, March 28, 2014 at 6:00PM (PST)/9:00 AM Singapore Time (GMT+08:00). Register here http://bit.ly/1cyJeBQ",
+      "name": "Webinar: Introduction To Pivotal's Next Generation Analytic Data Lake",
+      "place": {
+        "name": "Pivotal",
+        "location": {
+          "city": "San Francisco",
+          "country": "United States",
+          "latitude": 37.781997,
+          "longitude": -122.404051,
+          "state": "CA",
+          "street": "875 Howard St",
+          "zip": "94103"
+        },
+        "id": "161112704050757"
+      },
+      "start_time": "2014-03-27T09:00:00-0700",
+      "id": "1374377229504439"
+    },
+    {
+      "description": "Join Pivotal in Santa Clara next month for Strata 2014. When registering enter promo code \"Pivotal20\" to receive a 20% discount.",
+      "name": "Strata 2014: Making Data Work",
+      "place": {
+        "name": "Santa Clara, CA",
+        "location": {
+          "city": "Santa Clara",
+          "country": "United States",
+          "latitude": 37.3544,
+          "longitude": -121.969,
+          "state": "CA"
+        },
+        "id": "105464892820215"
+      },
+      "start_time": "2014-02-11T00:00:00-0800",
+      "id": "1413936472181851"
+    },
+    {
+      "description": "Storage Solutions for Big Data\n\nThere is a plethora of storage solutions for big data, each having its own pros and cons. The objective of this talk is to delve deeper into specific classes of storage types like Distributed File Systems, in-memory Key Value Stores, Big Table Stores and provide insights on how to choose the right storage solution for a specific class of problems. For instance, running large analytic workloads, iterative machine learning algorithms, and real time analytics.\n\nThe talk will cover HDFS, HBase, Redis and introduce Software Defined Storage.\n\nSchedule: \n5:30-6:30 pm Pizza and networking \n6:30-8:00pm Talk and Q&A \n8:00-8:30 pm Wind down\n\nAbout the speaker:  Sameer Tiwari\n\nSameer has been building platform products for large deployments since the Application Server days at Sun Microsystems. He started working on big data prior to the invention of Hadoop, in the field of email archiving/search. Recently he was working on Ad-Serving and User Platform systems at Yahoo. He is the Hadoop Architect at Pivotal, Inc. building the next generation systems for Big Data Analytics. - See more at: http://blog.gopivotal.com/author/sameertiwari#sthash.D6NH4fMa.dpuf",
+      "end_time": "2014-02-06T20:30:00-0800",
+      "name": "Storage Solutions for Big Data with Hadoop Architect, Sameer Tiwari",
+      "place": {
+        "name": "Pivotal",
+        "location": {
+          "city": "San Francisco",
+          "country": "United States",
+          "latitude": 37.781997,
+          "longitude": -122.404051,
+          "state": "CA",
+          "street": "875 Howard St",
+          "zip": "94103"
+        },
+        "id": "161112704050757"
+      },
+      "start_time": "2014-02-06T17:30:00-0800",
+      "id": "1402265536694038"
+    },
+    {
+      "description": "The Business Data Lake – an Evolution in Data Infrastructure\n\nGuest Speaker: Steve Jones, Strategy Director – Big Data & Analytics, CapGemini \n\nRSVP: http://bit.ly/1equKPW\n\nData is growing 60% YoY and there are new data types associated with that growth. The already expensive Enterprise Data Warehouse (EDW) process is being overburden for extracting, transforming and loading all data. IT departments are looking to maintain or lower costs as data grows by archiving and offloading data processing (which accounts for 60% to 70%) from the expensive enterprise data warehouse.\n\nBig Data technologies, such as Hadoop have already significantly altered the cost dynamics to store all, new and multiple data types like semi-structured and unstructured data. More than 75% of Hadoop uses cases center around data transformation and for archival purposes.  \n\nJoin us to learn how CapGemini and Pivotal are focused on how to take Hadoop to the next level of business transformation through IT transformation. The Business Data Lake promises to increase the amount of data being captured and stored through Hadoop, and more importantly increase the amount of data being analyzed and operationalized within in the business – turning insight into action.",
+      "name": "What You Can Do With Hadoop Webinar",
+      "place": {
+        "name": "Pivotal",
+        "location": {
+          "city": "San Francisco",
+          "country": "United States",
+          "latitude": 37.781997,
+          "longitude": -122.404051,
+          "state": "CA",
+          "street": "875 Howard St",
+          "zip": "94103"
+        },
+        "id": "161112704050757"
+      },
+      "start_time": "2014-01-23T09:00:00-0800",
+      "id": "177979675746505"
+    }
+  ]
+]
