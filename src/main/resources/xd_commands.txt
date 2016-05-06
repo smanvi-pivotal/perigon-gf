@@ -2,4 +2,4 @@ stream create --name twitter-pivotal --definition "twittersearch --consumerKey=a
 
 stream create --name FBEvents --definition "trigger --fixedDelay=60 | http-client --url='''https://graph.facebook.com/v2.5/pivotalsoftware/events?access_token=EAACEdEose0cBAClZB8UgP68kcFpLQlj3UhelJZCxmgYtWfJUxBtc6h7JqDZBIT9WqwMMt7HBILnF62JsP6ZBQRZBZAU6FwGr4Tv1t2HrrnCPWBPgr66p3mFrh0EZCxbMZAdAeXFDyaLrGjps1SE3VIZABTXTd6KdGSlVPLGwlzpohQgZDZD''' --httpMethod=GET  | gemfire-json-server --host=localhost --port=10334 --useLocator=true --regionName=facebookRegion --keyExpression=payload" --deploy
 
-stream create googleNews --definition "feed --url='https://news.google.com/news?q=Pivotal+Software&output=rss' | gemfire-json-server --host=localhost --port=10334 --useLocator=true --regionName=googleNewsRegion --keyExpression=payload.getField('uri')" --deploy
+stream create googleNews --definition "feed --url='https://news.google.com/news?q=Pivotal+Software&output=rss' --fixedRate=300000 | gemfire-json-server --host=localhost --port=10334 --useLocator=true --regionName=googleNewsRegion --keyExpression=payload.getField('uri')" --deploy
